@@ -1,6 +1,6 @@
 {
   "name": "@localnerve/bin-build",
-  "version": "7.8.1",
+  "version": "7.8.2",
   "description": "Easily build binaries",
   "license": "MIT",
   "type": "module",
@@ -37,7 +37,7 @@
   "dependencies": {
     "@xhmikosr/decompress": "^10.2.0",
     "@xhmikosr/downloader": "^15.2.0",
-    "execa": "^9.6.0",
+    "execa": "^9.6.1",
     "p-map-series": "^3.0.0",
     "tempfile": "^5.0.0"
   },
