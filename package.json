@@ -1,6 +1,6 @@
 {
   "name": "@localnerve/bin-build",
-  "version": "8.0.0",
+  "version": "9.0.0",
   "description": "Easily build binaries",
   "license": "MIT",
   "type": "module",
@@ -35,20 +35,20 @@
     "make"
   ],
   "dependencies": {
-    "@xhmikosr/decompress": "^10.2.0",
-    "@xhmikosr/downloader": "^15.2.0",
+    "@xhmikosr/decompress": "^11.1.1",
+    "@xhmikosr/downloader": "^16.1.1",
     "execa": "^9.6.1",
     "p-map-series": "^3.0.0",
     "tempfile": "^6.0.1"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.29.0",
-    "@eslint/js": "^9.39.2",
-    "eslint": "^9.39.2",
-    "eslint-plugin-jest": "^29.12.2",
-    "globals": "^17.3.0",
-    "jest": "^30.2.0",
-    "nock": "^14.0.10"
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.3",
+    "eslint-plugin-jest": "^29.15.0",
+    "globals": "^17.4.0",
+    "jest": "^30.3.0",
+    "nock": "^14.0.11"
   },
   "engines": {
     "node": ">=20"

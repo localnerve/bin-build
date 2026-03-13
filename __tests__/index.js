@@ -1,4 +1,3 @@
-/* eslint-env jest */
 import path from 'node:path';
 import url from 'node:url';
 import fs from 'node:fs/promises';
