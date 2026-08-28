@@ -2,3 +2,4 @@ node_modules
 tmp
 coverage
 *.tgz
+.DS_Store

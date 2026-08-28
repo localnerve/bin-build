@@ -1,6 +1,5 @@
 import js from '@eslint/js';
 import globals from 'globals';
-import jest from 'eslint-plugin-jest';
 
 export default [{
   ignores: [
@@ -10,7 +9,8 @@ export default [{
   ]
 }, {
   files: [
-    'index.js'
+    'index.js',
+    '__tests__/**'
   ],
   ...js.configs.recommended,
   languageOptions: {
@@ -18,9 +18,4 @@ export default [{
       ...globals.node
     }
   }
-}, {
-  files: [
-    '__tests__/**'
-  ],
-  ...jest.configs['flat/recommended']
 }];
