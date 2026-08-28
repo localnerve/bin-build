@@ -1,6 +1,6 @@
 {
   "name": "@localnerve/bin-build",
-  "version": "9.0.0",
+  "version": "10.0.0",
   "description": "Easily build binaries",
   "license": "MIT",
   "type": "module",
@@ -23,8 +23,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --testTimeout=28000",
-    "test:debug": "node --inspect-brk --experimental-vm-modules node_modules/jest/bin/jest.js --testTimeout=300000"
+    "test": "node --test --test-timeout=300000 \"./__tests__/**/*.js\""
   },
   "files": [
     "index.js"
@@ -35,22 +34,19 @@
     "make"
   ],
   "dependencies": {
-    "@xhmikosr/decompress": "^11.1.1",
-    "@xhmikosr/downloader": "^16.1.1",
-    "execa": "^9.6.1",
+    "@xhmikosr/decompress": "^11.1.4",
+    "@xhmikosr/downloader": "^16.3.1",
+    "execa": "^10.0.1",
     "p-map-series": "^3.0.0",
     "tempfile": "^6.0.1"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.29.0",
     "@eslint/js": "^10.0.1",
-    "eslint": "^10.0.3",
-    "eslint-plugin-jest": "^29.15.0",
-    "globals": "^17.4.0",
-    "jest": "^30.3.0",
-    "nock": "^14.0.11"
+    "eslint": "^10.9.1",
+    "globals": "^17.11.0",
+    "nock": "^14.0.17"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   }
 }

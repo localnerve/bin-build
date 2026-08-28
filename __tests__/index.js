@@ -1,12 +1,13 @@
+import { describe, test, beforeEach, afterEach } from 'node:test';
+import assert from 'node:assert';
 import path from 'node:path';
-import url from 'node:url';
 import fs from 'node:fs/promises';
 import nock from 'nock';
 import tempfile from 'tempfile';
 import decompress from '@xhmikosr/decompress';
 import m from '../index.js';
 
-const thisDirname = url.fileURLToPath(new URL('.', import.meta.url));
+const thisDirname = import.meta.dirname;
 
 async function pathExists (path) {
 	let result;
@@ -60,13 +61,13 @@ describe('bin-build', () => {
 
 		await m.url('http://foo.com/gifsicle.tar.gz', autoCommand(temporaryFile));
 
-		expect(await pathExists(path.join(temporaryFile, 'gifsicle'))).toBeTruthy();
+		assert.ok(await pathExists(path.join(temporaryFile, 'gifsicle')));
 	});
 
 	test('build source from existing archive', async () => {
 		await m.file(fixturePath('test.tar.gz'), autoCommand(temporaryFile));
 
-		expect(await pathExists(path.join(temporaryFile, 'gifsicle'))).toBeTruthy();
+		assert.ok(await pathExists(path.join(temporaryFile, 'gifsicle')));
 	});
 
 	test('build source from directory', async () => {
@@ -77,19 +78,25 @@ describe('bin-build', () => {
 		await decompress(fixturePath('test.tar.gz'), temporaryFile, {strip: 1});
 		await m.directory(temporaryFile, autoCommand(temporaryFile));
 
-		expect(await pathExists(path.join(temporaryFile, 'gifsicle'))).toBeTruthy();
+		assert.ok(await pathExists(path.join(temporaryFile, 'gifsicle')));
 	});
 
 	test('directory accepts a string', () => {
-		return expect(m.directory([])).rejects.toThrow('Expected a `string`, got `object`');
+		return assert.rejects(m.directory([]), {
+			message: 'Expected a `string`, got `object`'
+		});
 	});
 
 	test('file accepts a string', () => {
-		return expect(m.file([])).rejects.toThrow('Expected a `string`, got `object`');
+		return assert.rejects(m.file([]), {
+			message: 'Expected a `string`, got `object`'
+		});
 	});
 
 	test('url accepts a string', () => {
-		return expect(m.url([])).rejects.toThrow('Expected a `string`, got `object`');
+		return assert.rejects(m.url([]), {
+			message: 'Expected a `string`, got `object`'
+		});
 	});
 });
 

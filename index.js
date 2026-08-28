@@ -1,14 +1,14 @@
 import decompress from '@xhmikosr/decompress';
 import download from '@xhmikosr/downloader';
-import {execaCommand} from 'execa';
+import {execa} from 'execa';
 import pMapSeries from 'p-map-series';
 import tempfile from 'tempfile';
 
 function exec (cmd, cwd) {
-	return pMapSeries(cmd, x => execaCommand(x, {
+	return pMapSeries(cmd, x => execa({
 		cwd,
 		shell: true
-	}));
+	})`${x}`);
 }
 
 export function directory (dir, cmd) {
